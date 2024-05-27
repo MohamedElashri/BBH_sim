@@ -8,6 +8,8 @@ This example demonstrates how to use the BBH_SIM package to set up and run a sim
 from BBH_SIM.simulation import BBHSimulation
 from BBH_SIM.visualization import plot_orbits_3d, plot_waveform
 from BBH_SIM.waveform import generate_waveform
+import numpy as np
+
 
 # Set simulation parameters
 m1 = 1.0  # Mass of the first black hole
@@ -64,6 +66,8 @@ This example demonstrates how to save and load simulation data using the BBH_SIM
 
 ```python
 from BBH_SIM.simulation import BBHSimulation
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Set simulation parameters
 m1 = 1.0
@@ -99,6 +103,11 @@ loaded_simulation.load_data("simulation_data.txt")
 t_array = loaded_simulation.t_array
 r1_array = loaded_simulation.r1_array
 r2_array = loaded_simulation.r2_array
+
+# plot the orbits
+from BBH_SIM.visualization import plot_orbits_3d
+
+plot_orbits_3d(r1_array, r2_array)
 ```
 
 ## Explanation
@@ -126,6 +135,8 @@ This example demonstrates how to run a simulation with post-Newtonian correction
 
 ```python
 from BBH_SIM.simulation import BBHSimulation
+import numpy as np
+
 
 # Set simulation parameters
 m1 = 10.0
@@ -171,6 +182,7 @@ This example demonstrates how to run a simulation with radiation reaction using 
 ## Code
 
 ```python
+import numpy as np
 from BBH_SIM.simulation import BBHSimulation
 
 # Set simulation parameters
@@ -223,6 +235,8 @@ This example demonstrates how to run a simulation with spin effects using the BB
 
 ```python
 from BBH_SIM.simulation import BBHSimulation
+import numpy as np
+
 
 # Set simulation parameters
 m1 = 8.0
