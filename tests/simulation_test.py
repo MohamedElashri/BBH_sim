@@ -20,6 +20,6 @@ def test_bbh_simulation():
 
     assert simulation.r1_array.shape == (11, 3)
     assert simulation.r2_array.shape == (11, 3)
-    assert simulation.v1_array.shape == (11, 3)
-    assert simulation.v2_array.shape == (11, 3)
+    assert simulation.r1_array_2d.shape == (11, 2)
+    assert simulation.r2_array_2d.shape == (11, 2)
     assert np.allclose(simulation.t_array, np.arange(0.0, 1.1, 0.1))
