@@ -235,3 +235,12 @@ __pycache__/
 
 # ruff
 .ruff_cache/
+
+# plots
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.eps
+*.pdf
