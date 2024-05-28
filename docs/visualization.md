@@ -4,6 +4,8 @@ The BBH_SIM package provides functions to visualize the simulation results, incl
 
 ## Plotting Orbits
 
+### 3D Plot
+
 To visualize the orbits of the black holes in a 3D plot, use the `plot_orbits_3d()` function:
 
 ```python
@@ -15,6 +17,21 @@ plot_orbits_3d(simulation.r1_array, simulation.r2_array)
 This function takes the position arrays of the two black holes (`r1_array` and `r2_array`) as input and generates a 3D plot showing their trajectories.
 
 You can customize the plot by passing additional keyword arguments to the function, such as `fig`, `ax`, `show`, `save_path`, and other matplotlib plotting options.
+
+
+### 2D Plot
+
+To visualize the orbits of the black holes in a 2D plot, use the `plot_orbits_2d()` function:
+
+```python
+from BBH_SIM.visualization import plot_orbits_2d
+
+plot_orbits_2d(simulation.t_array, simulation.r1_array, simulation.r2_array)
+```
+
+This function takes the time array (`t_array`) and the position arrays of the two black holes (`r1_array` and `r2_array`) as input and generates a 2D plot showing their trajectories.
+
+You can customize the plot by passing additional keyword arguments to the function, similar to `plot_orbits_3d()`.
 
 ## Plotting Waveforms
 
@@ -44,3 +61,35 @@ plot_from_file("simulation_data.txt", plot_type="waveform")
 This function takes the file path of the simulation data file and the `plot_type` parameter to specify whether to plot the orbits or the waveforms.
 
 For more information on generating the gravitational waveforms, please refer to the [Waveform](waveform.md) section of the documentation.
+
+# Animations
+
+### 3D Animation
+
+To create a 3D animation of the black hole orbits, use the `animate_orbits_3d()` function:
+
+```python
+from BBH_SIM.visualization import animate_orbits_3d
+
+animate_orbits_3d(simulation.r1_array, simulation.r2_array)
+```
+
+This function generates a 3D animation showing the trajectories of the black holes over time.
+
+You can customize the animation by passing additional keyword arguments to the function, such as `fig`, `ax`, `show`, `save_path`, and other matplotlib animation options.
+
+### 2D Animation
+
+To create a 2D animation of the black hole orbits, use the `animate_orbits_2d()` function:
+
+```python
+from BBH_SIM.visualization import animate_orbits_2d
+
+animate_orbits_2d(simulation.t_array, simulation.r1_array, simulation.r2_array)
+```
+
+This function generates a 2D animation showing the trajectories of the black holes over time.
+
+You can customize the animation by passing additional keyword arguments to the function, similar to `animate_orbits_3d()`.
+
+

@@ -6,9 +6,7 @@ G = 6.67430e-11  # Gravitational constant
 c = 3.0e8  # Speed of light
 
 
-def compute_acceleration(
-    r, v, m1, m2, pn_order=1, include_radiation_reaction=False, spins=None
-):
+def compute_acceleration(r, v, m1, m2, pn_order=1, radiation=False, spins=None):
     r_mag = np.linalg.norm(r)
     v_mag = np.linalg.norm(v)
 
@@ -24,7 +22,7 @@ def compute_acceleration(
 
     # Radiation reaction correction
     a_rad_reaction = np.zeros(3)
-    if include_radiation_reaction:
+    if radiation:
         a_rad_reaction = compute_radiation_reaction(r, v, r_mag, m1, m2)
 
     # Spin effects (simplified)

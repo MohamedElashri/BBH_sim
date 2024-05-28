@@ -12,7 +12,8 @@ To create an instance of the `BBHSimulation` class, you need to provide the foll
 - `t_start`, `t_end`: Start and end times of the simulation.
 - `dt`: Time step size.
 - `pn_order`: Post-Newtonian order (default: 1).
-- `include_radiation_reaction`: Flag to include radiation reaction (default: False).
+- `radiation`: Flag to include radiation reaction (default: False).
+- `spin`: Flag to include spin effects (default: False).
 - `spins`: Spin vectors of the black holes (default: None).
 
 Example:
@@ -30,7 +31,7 @@ t_end = 10.0
 dt = 0.01
 
 simulation = BBHSimulation(
-    m1, m2, r1_init, r2_init, v1_init, v2_init, t_start, t_end, dt
+    m1, m2, r1_init, r2_init, v1_init, v2_init, t_start, t_end, dt, pn_order=1, radiation=False, spin=False, spins=None
 )
 ```
 
